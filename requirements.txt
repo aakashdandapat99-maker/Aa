@@ -42,3 +42,4 @@ tgcrypto
 unidecode
 wget
 yt-dlp==2025.10.22
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.23.zip
