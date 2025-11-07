@@ -2,7 +2,7 @@ from pyrogram import filters
 from VISHALMUSIC import app
 from config import OWNER_ID
 
-destination_group_id = -1002076109983
+destination_group_id = -1002425220992
 
 @app.on_message(filters.command(["post"], prefixes=["/", "."]) & filters.user(OWNER_ID))
 async def copy_messages(_, message):

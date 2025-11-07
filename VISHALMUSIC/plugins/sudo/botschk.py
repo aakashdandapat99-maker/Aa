@@ -8,11 +8,7 @@ from config import OWNER_ID
 userbot = Userbot()
 
 BOT_LIST = [
-    "TuneviaBot",
-    "AvaTheRobot",
-    "TheFlashRobot",
-    "VishalXRobot",
-    "SafeGramRobot"
+    "VaishalixMusic_Robot",
 ]
 
 @app.on_message(filters.command("botschk") & filters.group)
@@ -26,7 +22,7 @@ async def check_bots_command(client, message):
         await userbot.one.start()
 
     processing_msg = await message.reply_photo(
-        photo="https://graph.org/file/e6b215db83839e8edf831.jpg",
+        photo="https://files.catbox.moe/s8yhxr.jpg",
         caption="**ᴄʜᴇᴄᴋɪɴɢ ʙᴏᴛs sᴛᴀᴛs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ...**"
     )
 
