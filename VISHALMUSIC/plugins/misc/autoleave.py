@@ -5,7 +5,7 @@ from pyrogram.enums import ChatType
 
 import config
 from VISHALMUSIC import app
-from VISHALMUSIC.core.call import JARVIS, autoend
+from VISHALMUSIC.core.call import VISHAL, autoend
 from VISHALMUSIC.utils.database import get_client, is_active_chat, is_autoend
 
 
@@ -26,8 +26,8 @@ async def auto_leave():
                         ]:
                             if (
                                 i.chat.id != config.LOGGER_ID
-                                and i.chat.id != -1002077986660
-                                and i.chat.id != -1002166290494
+                                and i.chat.id != -1002425220992
+                                and i.chat.id != -1002425220992
                             ):
                                 if left == 20:
                                     continue
@@ -59,7 +59,7 @@ async def auto_end():
                     continue
                 autoend[chat_id] = {}
                 try:
-                    await JARVIS.stop_stream(chat_id)
+                    await VISHAL.stop_stream(chat_id)
                 except:
                     continue
                 try:
