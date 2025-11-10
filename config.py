@@ -6,72 +6,67 @@ from pyrogram import filters
 # Load environment variables from .env file
 load_dotenv()
 
-# ────────────────────────────────────────────────────────────────────────────────
-# 🎵 𝗩𝗜𝗦𝗛𝗔𝗟 𝗠𝗨𝗦𝗜𝗖 𝗕𝗢𝗧 - 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗧𝗜𝗢𝗡 🎶
-# ✨ 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 & 𝗦𝘁𝘆𝗹𝗶𝘀𝗵 𝗘𝗱𝗶𝘁𝗶𝗼𝗻 ✨
-# ────────────────────────────────────────────────────────────────────────────────
-
-# ── 🎵 𝗖𝗼𝗿𝗲 𝗕𝗼𝘁 𝗖𝗼𝗻𝗳𝗶𝗴 ──────────────────────────────────────────────────────
-API_ID = int(getenv("API_ID", "26493077"))
+# ── Core bot config ────────────────────────────────────────────────────────────
+API_ID = int(getenv("API_ID", 26493077))
 API_HASH = getenv("API_HASH", "6586f0276c7748e54684719bdd247d90")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
-OWNER_ID = int(getenv("OWNER_ID", "7044783841"))
+OWNER_ID = int(getenv("OWNER_ID", 7044783841))
 OWNER_USERNAME = getenv("OWNER_USERNAME", "Its_me_Vishall")
-BOT_USERNAME = getenv("BOT_USERNAME", "VaishalixMusic_Robot")
-BOT_NAME = getenv("BOT_NAME", "𝐕𝐈𝐒𝐇𝐀𝐋 ✘ 𝐌𝐔𝐒𝐈𝐂")
-ASSUSERNAME = getenv("ASSUSERNAME", "𝐕𝐈𝐒𝐇𝐀𝐋 ✘ 𝐀𝐒𝐒𝐈𝐒𝐓𝐀𝐍𝐓")
+BOT_USERNAME = getenv("BOT_USERNAME", "Shrutimusic_bot")
+BOT_NAME = getenv("BOT_NAME", "𝐒ʜʀᴜᴛɪ ✘ 𝙼ᴜsɪᴄ˼ ♪")
+ASSUSERNAME = getenv("ASSUSERNAME", "𝐒ʜʀᴜᴛɪ ✘ ᴀꜱꜱɪꜱᴛᴀɴᴛ˼")
 
-# ── 🗄️ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 & 𝗟𝗼𝗴𝗴𝗶𝗻𝗴 ──────────────────────────────────────────────────
+# ── Database & logging ─────────────────────────────────────────────────────────
 MONGO_DB_URI = getenv("MONGO_DB_URI")
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002425220992"))
+LOGGER_ID = int(getenv("LOGGER_ID", -1002425220992))
 
-# ── ⚡ 𝗟𝗶𝗺𝗶𝘁𝘀 ─────────────────────────────────────────────────────────────────
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "300"))
+# ── Limits (durations in min/sec; sizes in bytes) ──────────────────────────────
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 300))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "1200"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "1800"))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "157286400"))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1288490189"))
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "30"))
 
-# ── 🌐 𝗘𝘅𝘁𝗲𝗿𝗻𝗮𝗹 𝗔𝗣𝗜𝘀 ────────────────────────────────────────────────────────
-COOKIE_URL = getenv("COOKIE_URL")
-API_URL = getenv("API_URL")
-API_KEY = getenv("API_KEY")
-DEEP_API = getenv("DEEP_API")
+# ── External APIs ──────────────────────────────────────────────────────────────
+COOKIE_URL = getenv("COOKIE_URL")  # required (paste link)
+API_URL = getenv("API_URL")        # optional
+API_KEY = getenv("API_KEY")        # optional
+DEEP_API = getenv("DEEP_API")      # optional
 
-# ── 🚀 𝗛𝗼𝘀𝘁𝗶𝗻𝗴 ──────────────────────────────────────────────────────────────
+# ── Hosting / deployment ───────────────────────────────────────────────────────
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-# ── 🔄 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 ──────────────────────────────────────────────────────────────
+# ── Git / updates ──────────────────────────────────────────────────────────────
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/ItsMeVishal0/VishalMusic.git")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "Master")
-GIT_TOKEN = getenv("GIT_TOKEN")
+GIT_TOKEN = getenv("GIT_TOKEN")  # needed if repo is private
 
-# ── 📞 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ──────────────────────────────────────────────────────────────
+# ── Support links ──────────────────────────────────────────────────────────────
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ItsMeVishalBots")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/ItsMeVishalSupport")
 
-# ── 🤖 𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 ───────────────────────────────────────────────────────────
+# ── Assistant auto-leave ───────────────────────────────────────────────────────
 AUTO_LEAVING_ASSISTANT = False
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "3600"))
 
-# ── 🐞 𝗗𝗲𝗯𝘂𝗴 ─────────────────────────────────────────────────────────────────
+# ── Debug ──────────────────────────────────────────────────────────────────────
 DEBUG_IGNORE_LOG = True
 
-# ── 🎧 𝗦𝗽𝗼𝘁𝗶𝗳𝘆 ───────────────────────────────────────────────────────────────
+# ── Spotify (optional) ─────────────────────────────────────────────────────────
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "22b6125bfe224587b722d6815002db2b")
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "c9c63c6fbf2f467c8bc68624851e9773")
 
-# ── 🔗 𝗦𝗲𝘀𝘀𝗶𝗼𝗻𝘀 ─────────────────────────────────────────────────────────────
+# ── Session strings (optional) ─────────────────────────────────────────────────
 STRING1 = getenv("STRING_SESSION")
 STRING2 = getenv("STRING_SESSION2")
 STRING3 = getenv("STRING_SESSION3")
 STRING4 = getenv("STRING_SESSION4")
 STRING5 = getenv("STRING_SESSION5")
 
-# ── 🎨 𝗠𝗲𝗱𝗶𝗮 𝗔𝘀𝘀𝗲𝘁𝘀 ─────────────────────────────────────────────────────────
+# ── Media assets ───────────────────────────────────────────────────────────────
 START_VIDS = [
     "https://files.catbox.moe/7rie2i.mp4",
     "https://files.catbox.moe/j3ba3f.mp4",
@@ -83,7 +78,6 @@ START_VIDS = [
     "https://files.catbox.moe/7ygvch.mp4",
     "https://files.catbox.moe/jh55tl.mp4",
 ]
-
 STICKERS = [
     "CAACAgUAAyEFAASQje-AAAI92mkOFHmOlyKv0vEpoJE6S7ZInIuPAALbFQACSZmpVI0wvAnbSnk9HgQ",
     "CAACAgQAAyEFAASQje-AAAI92GkOFFx4j5i7GwlGsRbvXBaZbgquAAIoFQACir5JU9xIMA-J9yY7HgQ",
@@ -92,11 +86,10 @@ STICKERS = [
     "CAACAgUAAyEFAASQje-AAAI90mkOFCn95GwjE62nWBG2o9H-FK15AAJgFQACJ_uwVMGj96qQgd3hHgQ",
     "CAACAgQAAyEFAASQje-AAAI90GkOFCDWtQkvBiumJxSoedz0NqvLAAIzFAAC9ED4UX1Ta6URzlyIHgQ",
 ]
-
 HELP_IMG_URL = "https://files.catbox.moe/a6sz5r.jpg"
 PING_VID_URL = "https://files.catbox.moe/qibmue.mp4"
 PLAYLIST_IMG_URL = "https://files.catbox.moe/h9dan0.jpg"
-STATS_VID_URL = "https://files.catbox.moe/qibmue.mp4"
+STATS_VID_URL = "https://files.catbox.moe/a6sz5r.jpg"
 TELEGRAM_AUDIO_URL = "https://files.catbox.moe/s8yhxr.jpg"
 TELEGRAM_VIDEO_URL = "https://files.catbox.moe/a6sz5r.jpg"
 STREAM_IMG_URL = "https://files.catbox.moe/h9dan0.jpg"
@@ -104,44 +97,38 @@ SOUNCLOUD_IMG_URL = "https://files.catbox.moe/a6sz5r.jpg"
 YOUTUBE_IMG_URL = "https://files.catbox.moe/a6sz5r.jpg"
 SPOTIFY_ARTIST_IMG_URL = SPOTIFY_ALBUM_IMG_URL = SPOTIFY_PLAYLIST_IMG_URL = YOUTUBE_IMG_URL
 
-# ── ⚡ 𝗛𝗲𝗹𝗽𝗲𝗿𝘀 ──────────────────────────────────────────────────────────────
+# ── Helpers ────────────────────────────────────────────────────────────────────
 def time_to_seconds(time: str) -> int:
     return sum(int(x) * 60**i for i, x in enumerate(reversed(time.split(":"))))
 
 DURATION_LIMIT = time_to_seconds(f"{DURATION_LIMIT_MIN}:00")
 
-# ── 💫 𝗕𝗼𝘁 𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝘁𝗶𝗼𝗻 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀 ──────────────────────────────────────────
+# ───── Bot Introduction Messages ───── #
 AYU = [
-    "💞 ғɪɴᴅɪɴɢ ʟᴏᴠᴇ ғʀᴇǫᴜᴇɴᴄʏ... ᴍʏ ʜᴇᴀʀᴛ ɪѕ ᴛᴜɴɪɴɢ ᴛᴏ ʏᴏᴜ 💫",
-    "🎧 ᴍᴇʟᴏᴅʏ ɪɴ ᴍᴏᴛɪᴏɴ... ʙᴀʙʏ ʏᴏᴜʀ ʙᴇᴀᴛ ɪѕ ᴍʏ ʀʜʏᴛʜᴍ 💋",
-    "🌹 ᴠɪʙᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ... ᴍʏ ʜᴇᴀʀᴛ ᴅᴀɴᴄɪɴɢ ᴡɪᴛʜ ʏᴏᴜ 🎶",
-    "💘 ʟᴏᴀᴅɪɴɢ ʜᴇᴀʀᴛʙᴇᴀᴛ... ᴍʏ ʙᴀʙʏ ɪѕ ᴛʜᴇ ʀʜʏᴍᴇ 🌸",
-    "💫 ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ʏᴏᴜʀ ѕᴏᴜʟ... ᴍʏ ʟᴏᴠᴇ ғʀᴇǫᴜᴇɴᴄʏ ❤️",
-    "💖 ʙᴀʙʏ, ʏᴏᴜʀ ᴠɪʙᴇ ɪѕ ᴍʏ ғᴀᴠᴏᴜʀɪᴛᴇ ѕᴏɴɢ 🌷",
-    "🎵 ʙᴀʙᴇ, ʏᴏᴜ ᴀʀᴇ ᴛʜᴇ ʙᴇᴀᴛ ɪɴ ᴍʏ ᴍᴇʟᴏᴅʏ 💞",
-    "💋 ʟᴏᴀᴅɪɴɢ ᴅʀᴇᴀᴍ ᴍᴏᴅᴇ... ʜᴇᴀʀᴛ ᴀʟɪɢɴᴇᴅ ᴡɪᴛʜ ʏᴏᴜ 💫",
-    "🌸 ᴍʏ ʜᴇᴀʀᴛ ɪѕ ʙᴜғғᴇʀɪɴɢ ʏᴏᴜʀ ʟᴏᴠᴇ 🎧",
-    "❤️‍🔥 ғɪɴᴅɪɴɢ ʏᴏᴜʀ ᴡᴀᴠᴇѕ, ᴍʏ ᴀɴɢᴇʟ 💋",
-    "💞 ʙᴀʙʏ, ʏᴏᴜʀ ʜᴇᴀʀᴛ ɪѕ ᴍʏ ᴘʟᴀʏʟɪѕᴛ 🎶",
-    "🌷 ᴅᴇᴛᴇᴄᴛɪɴɢ ʟᴏᴠᴇ ѕɪɢɴᴀʟ... ʙᴀʙᴇ ʏᴏᴜ’ʀᴇ ᴏɴ ʟᴏᴏᴘ 💘",
-    "🎶 ʜᴇᴀʀᴛ ʀᴇᴘʟᴀʏɪɴɢ ʏᴏᴜʀ ɴᴀᴍᴇ... ᴀʟʟ ɴɪɢʜᴛ 💞",
-    "💓 ᴍʏ ʟᴏᴠᴇ, ʏᴏᴜʀ ʙᴇᴀᴛ ɪѕ ᴍʏ ғᴀᴠᴏᴜʀɪᴛᴇ ʀᴇᴍɪx 🌹",
-    "💫 ʙᴀʙʏ ʏᴏᴜ’ʀᴇ ᴛʜᴇ ʀʜʏᴛʜᴍ ɪɴ ᴍʏ ʜᴇᴀʀᴛ 💖"
+    "❤️", "💞", "🩷", "💋", "🌹", "💫", "💖", "✨", "💘", "💝",
+    "💕", "💗", "💓", "💟", "❣️", "🌸", "🌼", "💐", "🪷", "🌺",
+    "💎", "🌙", "🌟", "🌈", "🦋", "🥰", "😍", "😘", "😚", "😻",
+    "🤍", "💛", "💚", "💙", "💜", "🖤", "🤎", "🩵", "🩶", "💏",
+    "💑", "💍", "💌", "💎", "🌹", "💖", "💘", "💝", "💗", "💞",
+    "❤️‍🔥", "❤️‍🩹", "💓", "💟", "💃", "🕺", "🎶", "🎵", "🎧", "💫",
+    "✨", "🌈", "🌸", "🌺", "🌷", "🌼", "🍀", "🥂", "🍫", "🍓",
+    "🍒", "🍑", "🫶", "🤗", "🤭", "🥹", "💃", "🎀", "💄", "💅",
+    "🕊️", "🐦", "🌌", "🎇", "🎆", "🌠", "🪩", "🎉", "🎊", "🥳",
+    "💞", "💖", "💘", "💝", "💗", "💓", "❤️", "💋", "🌹", "✨",
+    "💫", "🌈", "🦋", "💟", "💍", "💎", "🌸", "🥰", "😍", "💌"
 ]
 
 AYUV = [
-    "💫🌸 ʜᴇʏ {0} 💖🦋\n\n🌈 ᴛʜɪꜱ ɪꜱ {1} 💎 ʏᴏᴜʀ ᴠɪʙᴇꜱ ᴄᴏɴᴛʀᴏʟʟᴇʀ 🎶✨\n\n╭───★・𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦・★───╮\n┃ 🌐 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺𝘀: ʏᴏᴜᴛᴜʙᴇ • ꜱᴘᴏᴛɪꜰʏ • ᴀᴘᴘʟᴇᴍᴜꜱɪᴄ • ʀᴇꜱꜱᴏ • ꜱᴏᴜɴᴅᴄʟᴏᴜᴅ 💞\n┃ ⚡ 𝗨𝗽𝘁𝗶𝗺𝗲 : {2} ⏳\n┃ 💖 𝗦𝘁𝗼𝗿𝗮𝗴𝗲 : {3} 📀\n┃ 🔥 𝗖𝗣𝗨 : {4} 💫\n┃ 🩵 𝗥𝗔𝗠 : {5} 🦋\n┃ 🌸 𝗨𝘀𝗲𝗿𝘀 : {6} 💌\n┃ 🌈 𝗖𝗵𝗮𝘁𝘀 : {7} 🕊️\n╰─────────────────────╯\n\n💌✨ 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 ➪ [»»—⎯⁠⁠⁠⁠‌꯭꯭νιѕнαL𝅃 ₊꯭♡゙꯭. »︎](https://t.me/Its_me_Vishall) 🌹💎",
+    "💌✨ ʜᴇʟʟᴏ {0} 💞🦋\n\n🌹 ɪᴛ'ꜱ ᴍᴇ {1} 💖💫\n\n┏━━━━━━━━━━━━━━━⧫\n┃ 💫 ꜱᴜᴘᴘᴏʀᴛᴇᴅ ᴘʟᴀᴛꜰᴏʀᴍꜱ:\n┃ 🎵 ʏᴏᴜᴛᴜʙᴇ | ꜱᴘᴏᴛɪꜰʏ | ʀᴇꜱꜱᴏ | ᴀᴘᴘʟᴇᴍᴜꜱɪᴄ | ꜱᴏᴜɴᴅᴄʟᴏᴜᴅ 💌\n┃\n┃ 🔥 ᴜᴘᴛɪᴍᴇ : {2} 🌙\n┃ 💖 ꜱᴇʀᴠᴇʀ sᴛᴏʀᴀɢᴇ : {3} 💫\n┃ ⚡ ᴄᴘᴜ ʟᴏᴀᴅ : {4} 💞\n┃ 🩷 ʀᴀᴍ ᴄᴏɴsᴜᴍᴘᴛɪᴏɴ : {5} 🦋\n┃ 🌈 ᴜsᴇʀs : {6} 💌\n┃ 🕊️ ᴄʜᴀᴛs : {7} 💫\n┗━━━━━━━━━━━━━━━⧫\n\n💌 ᴅᴇᴠᴇʟᴏᴩᴇʀ ➪ [»»—⎯⁠⁠⁠⁠‌꯭꯭νιѕнαL𝅃 ₊꯭♡゙꯭. »︎](https://t.me/Its_me_Vishall) 🌹✨",
 
-    "🌷💖 ʜᴇʏᴀ {0} 💫🌈\n\n🎧 ɪ'ᴍ {1} — ʏᴏᴜʀ ᴄʟᴏᴜᴅ ᴍᴜꜱɪᴄ ᴄᴏᴍᴘᴀɴɪᴏɴ 💞✨\n\n╭───☆・𝗙𝗘𝗔𝗧𝗨𝗥𝗘𝗦・☆───╮\n┃ 🎶 ʟɪᴠᴇ ᴍᴜꜱɪᴄ / ᴠɪᴅᴇᴏ ꜱᴛʀᴇᴀᴍ 💎\n┃ 🌈 ꜱᴜᴘᴇʀꜰᴀꜱᴛ ᴠᴄ ᴘʟᴀʏᴇʀ ⚡\n┃ 💖 ᴀᴜᴛᴏ ʀᴇꜱᴜᴍᴇ + ʟᴏ-ʟᴀɢ ᴍᴏᴅᴇ 🩵\n┃ 🌹 ᴄʟᴇᴀɴ ɢᴜɪ + ɴᴏ ᴘʀᴏᴍᴏ 🕊️\n╰─────────────────────╯\n\n📊 𝗦𝗧𝗔𝗧𝗨𝗦:\n💫 𝗨𝗽𝘁𝗶𝗺𝗲 : {2}\n💖 𝗦𝘁𝗼𝗿𝗮𝗴𝗲 : {3}\n⚡ 𝗖𝗣𝗨 : {4}\n🩵 𝗥𝗔𝗠 : {5}\n🌸 𝗨𝘀𝗲𝗿𝘀 : {6}\n🌈 𝗖𝗵𝗮𝘁𝘀 : {7}\n\n💎 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 ➪ [»»—⎯⁠⁠⁠⁠‌꯭꯭νιѕнαL𝅃 ₊꯭♡゙꯭. »︎](https://t.me/Its_me_Vishall) 🌸✨"
+    "💖🌹 ʜɪ {0} 💫🦋\n\n✨ ɪ'ᴍ {1} 💞 ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ʙᴏᴛ 🔥\n\n┏━━━━━━━━━━━━━━━⧫\n┃ 🌟 ꜰᴇᴀᴛᴜʀᴇꜱ:\n┃ 🎵 sᴜᴘᴇʀꜰᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ 💌\n┃ 🎶 ᴘʟᴀʏ ᴍᴜꜱɪᴄ & ᴠɪᴅᴇᴏ 💫\n┃ 🌈 ʟɪᴠᴇ ꜱᴛʀᴇᴀᴍɪɴɢ 🕊️\n┃ 🩷 24x7 ᴍᴜꜱɪᴄ ᴄʜɪʟʟ 💖\n┃ 💌 ɴᴏ ᴘʀᴏᴍᴏ 🌹\n┃\n┃ 🔥 ᴜᴘᴛɪᴍᴇ : {2} 💫\n┃ 💖 ꜱᴇʀᴠᴇʀ sᴛᴏʀᴀɢᴇ : {3} 🌈\n┃ ⚡ ᴄᴘᴜ ʟᴏᴀᴅ : {4} 💞\n┃ 🩷 ʀᴀᴍ ᴄᴏɴsᴜᴍᴘᴛɪᴏɴ : {5} 🦋\n┃ 🌹 ᴜsᴇʀs : {6} 💌\n┃ 🕊️ ᴄʜᴀᴛs : {7} 💫\n┗━━━━━━━━━━━━━━━⧫\n\n💌 ᴅᴇᴠᴇʟᴏᴩᴇʀ ➪ [»»—⎯⁠⁠⁠⁠‌꯭꯭νιѕнαL𝅃 ₊꯭♡゙꯭. »](https://t.me/Its_me_Vishall) 💖🌸",
 ]
 
-# ── 🚫 𝗕𝗮𝗻𝗻𝗲𝗱 𝗨𝘀𝗲𝗿𝘀 ──────────────────────────────────────────────────────
+# ── Runtime structures ─────────────────────────────────────────────────────────
 BANNED_USERS = filters.user()
-
-# ── 📦 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 𝗦𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲𝘀 ──────────────────────────────────────────────────
 adminlist, lyrical, votemode, autoclean, confirmer = {}, {}, {}, [], {}
 
-# ── ✅ 𝗩𝗮𝗹𝗶𝗱𝗮𝘁𝗶𝗼𝗻 ───────────────────────────────────────────────────────────
+# ── Minimal validation ─────────────────────────────────────────────────────────
 if SUPPORT_CHANNEL and not re.match(r"^https?://", SUPPORT_CHANNEL):
     raise SystemExit("[ERROR] - Invalid SUPPORT_CHANNEL URL. Must start with https://")
 
@@ -154,8 +141,8 @@ if not COOKIE_URL:
 # Only allow these cookie link formats
 if not re.match(r"^https://(batbin\.me|pastebin\.com)/[A-Za-z0-9]+$", COOKIE_URL):
     raise SystemExit("[ERROR] - Invalid COOKIE_URL. Use https://batbin.me/<id> or https://pastebin.com/<id>")
-
-
+    
+    
 print("""
 ╔════════════════════════════════════╗
 ║🎵 𝗩𝗜𝗦𝗛𝗔𝗟 𝗠𝗨𝗦𝗜𝗖 𝗕𝗢𝗧 𝗣𝗥𝗘𝗠𝗜𝗨𝗠 𝗘𝗗𝗜𝗧𝗜𝗢𝗡  
