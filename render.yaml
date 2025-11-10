@@ -1,5 +1,5 @@
 services:
-  - type: background
+  - type: worker
     name: vishalmusic-bot
     env: python
     plan: free
