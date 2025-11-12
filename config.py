@@ -7,8 +7,8 @@ from pyrogram import filters
 load_dotenv()
 
 # ── Core bot config ────────────────────────────────────────────────────────────
-API_ID = int(getenv("API_ID", 37873905))
-API_HASH = getenv("API_HASH", "e5dafc71e5254a57e720e9467f6e6ce8")
+API_ID = int(getenv("API_ID", 30604153))
+API_HASH = getenv("API_HASH", "71847be8f73b2705146cea2669130232)
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 OWNER_ID = int(getenv("OWNER_ID", 5047224084))
@@ -19,7 +19,7 @@ ASSUSERNAME = getenv("ASSUSERNAME", "𝐒ʜʀᴜᴛɪ ✘ ᴀꜱꜱɪꜱᴛᴀɴ
 
 # ── Database & logging ─────────────────────────────────────────────────────────
 MONGO_DB_URI = getenv("MONGO_DB_URI")
-LOGGER_ID = int(getenv("LOGGER_ID", -1003427423229))
+LOGGER_ID = int(getenv("LOGGER_ID", -1003203104374))
 
 # ── Limits (durations in min/sec; sizes in bytes) ──────────────────────────────
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 300))
