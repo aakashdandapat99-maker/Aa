@@ -7,8 +7,8 @@ from pyrogram import filters
 load_dotenv()
 
 # ── Core bot config ────────────────────────────────────────────────────────────
-API_ID = int(getenv("API_ID", 30604153))
-API_HASH = getenv("API_HASH", "71847be8f73b2705146cea2669130232")
+API_ID = int(getenv("API_ID", 39499264))
+API_HASH = getenv("API_HASH", "e3bb8e8128372059a4d73c0c7f6ba49f")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 OWNER_ID = int(getenv("OWNER_ID", 5047224084))
@@ -22,7 +22,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI")
 LOGGER_ID = int(getenv("LOGGER_ID", -1002821891474))
 
 # ── Limits (durations in min/sec; sizes in bytes) ──────────────────────────────
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 300))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "1200"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "1800"))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "157286400"))
