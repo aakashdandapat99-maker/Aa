@@ -160,7 +160,13 @@ gstats_1: "📊 ɢᴇᴛᴛɪɴɢ {0} sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛ�
 gstats_2: "📊 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ sᴛᴀᴛs ᴏғ {0}."
 gstats_3: "📈 <b><u>{0} sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ :</u></b>\n\n🤖 ᴀssɪsᴛᴀɴᴛs : <code>{1}</code>\n🚫 ʙʟᴏᴄᴋᴇᴅ : <code>{2}</code>\n💬 ᴄʜᴀᴛs: <code>{3}</code>\n👥 ᴜsᴇʀs : <code>{4}</code>\n📦 ᴍᴏᴅᴜʟᴇs : <code>{5}</code>\n👑 sᴜᴅᴏᴇʀs : <code>{6}</code>\n\n🤖 ᴀᴜᴛᴏ ʟᴇᴀᴠɪɴɢ ᴀssɪsᴛᴀɴᴛ : {7}\n⏱️ ᴘʟᴀʏ ᴅᴜʀᴀᴛɪᴏɴ ʟɪᴍɪᴛ : {8} ᴍɪɴᴜᴛᴇs"
 gstats_4: "🔒 ᴛʜɪs ʙᴜᴛᴛᴏɴ ɪs ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs."
-gstats_5: "🖥️ <b><u>{0} sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ :</u></b>\n\n📦 ᴍᴏᴅᴜʟᴇs : <code>{1}</code>\n💻 ᴘʟᴀᴛғᴏʀᴍ : <code>{2}</code>\n🧠 ʀᴀᴍ : <code>{3}</code>\n⚡ ᴘʜʏsɪᴄᴀʟ ᴄᴏʀᴇs : <code>{4}</code>\n🔢 ᴛᴏᴛᴀʟ ᴄᴏʀᴇs : <code>{5}</code>\n🌀 ᴄᴘᴜ ғʀᴇǫᴜᴇɴᴄʏ : <code>{6}</code>\n\n🐍 ᴘʏᴛʜᴏɴ : <code>{7}</code>\n🔥 ᴘʏʀᴏɢʀᴀᴍ : <code>{8}</code>\n📞 ᴘʏ-ᴛɢᴄᴀʟʟs : <code>{9}</code>\n\n💾 sᴛᴏʀᴀɢᴇ ᴀᴠᴀɪʟᴀʙʟᴇ : <code>{10} ɢɪʙ</code>\n📁 sᴛᴏʀᴀɢᴇ ᴜsᴇᴅ : <code>{11} ɢɪʙ</code>\n📊 sᴛᴏʀᴀɢᴇ ʟᴇғᴛ : <code>{12} ɢɪʙ</code>\n\n💬 sᴇʀᴠᴇᴅ ᴄʜᴀᴛs : <code>{13}</code>\n👥 sᴇʀᴠᴇᴅ ᴜsᴇʀs : <code>{14}</code>\n🚫 ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs : <code>{15}</code>\n👑 sᴜᴅᴏ ᴜsᴇʀs : <code>{16}</code>\n\n🗃️ ᴛᴏᴛᴀʟ ᴅʙ sɪᴢᴇ : <code>{17} ᴍʙ</code>\n💽 ᴛᴏᴛᴀʟ ᴅʙ sᴛᴏʀᴀɢᴇ : <code>{18} ᴍʙ</code>\n📚 ᴛᴏᴛᴀʟ ᴅʙ ᴄᴏʟʟᴇᴄᴛɪᴏɴs : <code>{19}</code>\n🔑 ᴛᴏᴛᴀʟ ᴅʙ ᴋᴇʏs : <code>{20}</code>"
+gstats_5: "🖥️ <b><u>{0} sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ :</u></b>\n
+📦 ᴍᴏᴅᴜʟᴇs : <code>{1}</code>\n💻 ᴘʟᴀᴛғᴏʀᴍ : <code>{2}</code>\n🧠 ʀᴀᴍ : <code>{3}</code>\n⚡ ᴘʜʏsɪᴄᴀʟ ᴄᴏʀᴇs : <code>{4}</code>\n🔢 ᴛᴏᴛᴀʟ ᴄᴏʀᴇs : <code>{5}</code>\n🌀 ᴄᴘᴜ ғʀᴇǫᴜᴇɴᴄʏ : <code>{6}</code>\n
+🐍 ᴘʏᴛʜᴏɴ : <code>{7}</code>\n🔥 ᴘʏʀᴏɢʀᴀᴍ : <code>{8}</code>\n📞 ᴘʏ-ᴛɢᴄᴀʟʟs : <code>{9}</code>\n
+💾 sᴛᴏʀᴀɢᴇ ᴀᴠᴀɪʟᴀʙʟᴇ : <code>{10} ɢɪʙ</code>\n📁 sᴛᴏʀᴀɢᴇ ᴜsᴇᴅ : <code>{11} ɢɪʙ</code>\n📊 sᴛᴏʀᴀɢᴇ ʟᴇғᴛ : <code>{12} ɢɪʙ</code>\n
+💬 sᴇʀᴠᴇᴅ ᴄʜᴀᴛs : <code>{13}</code>\n👥 sᴇʀᴠᴇᴅ ᴜsᴇʀs : <code>{14}</code>\n🚫 ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs : <code>{15}</code>\n👑 sᴜᴅᴏ ᴜsᴇʀs : <code>{16}</code>\n
+🗃️ ᴛᴏᴛᴀʟ ᴅʙ sɪᴢᴇ : <code>{17} ᴍʙ</code>\n💽 ᴛᴏᴛᴀʟ ᴅʙ sᴛᴏʀᴀɢᴇ : <code>{18} ᴍʙ</code>\n📚 ᴛᴏᴛᴀʟ ᴅʙ ᴄᴏʟʟᴇᴄᴛɪᴏɴs : <code>{19}</code>\n🔑 ᴛᴏᴛᴀʟ ᴅʙ ᴋᴇʏs : <code>{20}</code>"
+
 
 # 🎵 Play Callbacks
 playcb_1: "🚫 ᴀᴡᴡ, ᴛʜɪs ɪs ɴᴏᴛ ғᴏʀ ʏᴏᴜ ʙᴀʙʏ."
